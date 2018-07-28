@@ -5,7 +5,7 @@
 //O(n) for searching through a linked list
 //advantages:
 //can be stored in an efficient way in the memory. sometimes all the data cannot be stored together, here linkedlist can be 
-//store in different locations and can be connected using pointers.
+//store in different locations and can be connected using pointers - better memory management.
 //also, its time complexity is pretty efficient.
 // ****************************************************************************************************************************
 
