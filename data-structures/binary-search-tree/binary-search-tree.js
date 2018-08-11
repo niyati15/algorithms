@@ -37,6 +37,17 @@ BST.prototype.contains = function(value){
     }
 }
 
+//DFS - Depth First Traversal of a BST - in-order version: we will touch all the nodes from least value to the greatest value
+BST.prototype.depthFirstTraversal = function(iteratorFunc){
+    if(this.left) this.left.depthFirstTraversal(iteratorFunc);
+    iteratorFunc(this.value);
+    if(this.right) this.right.depthFirstTraversal(iteratorFunc);
+}
+
+function log(value){
+    console.log(value);
+}
+
 // var bst = new BST(50);
 
 // bst.insert(30);
@@ -54,3 +65,4 @@ BST.prototype.contains = function(value){
 // console.log(bst);
 
 // console.log(bst.contains(100001));
+// bst.depthFirstTraversal(log);
