@@ -24,6 +24,21 @@ HashTable.prototype.hash = function(key){
     var bucket = total % this.numBuckets;
     return bucket;
 }
-var myHT = new HashTable(30);
 
-console.log(myHT);
+HashTable.prototype.insert = function(key, value) {
+    var index = this.hash(key);
+    console.log('INDEX: ', index);
+    if(!this.buckets[index]) this.buckets[index] = new HashNode(key, value);
+    else {
+        var currentNode = this.buckets[index];
+        while (currentNode.next) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = new HashNode(key, value);
+    }
+};
+
+var myHT = new HashTable(30);
+myHT.insert('Niyati', 'niyati@gmail.com');
+myHT.insert('Maulik', 'maulik@gmail.com');
+console.log(myHT.buckets);
